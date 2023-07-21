@@ -30,6 +30,8 @@ This script makes an HTTP call to each URL in the urls.txt file. It will generat
 
 You can find a reference of HTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
+To run, open Command Prompt, navigate to Python testing folder ([cd then drag folder path], then type [python 2_check_urls_a-z_list.py]
+
 # Notes
 
 You can use 2_check_urls_a-z_list.py to check any list of urls, including URLs from an Alma analytics report, an EZproxy config file, or similar source.
