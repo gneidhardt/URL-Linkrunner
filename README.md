@@ -13,6 +13,8 @@ For especially polite crawlers, you can check a site’s robots.txt (this will b
 Internet Archive = crawl away
 HathiTrust = 10 seconds
 NIH = 2 seconds
+OCLC = 2 seconds
+NAP = none
 
 Documentation on adding delays: https://stackoverflow.com/questions/4054254/how-to-add-random-delays-between-the-queries-sent-to-google-to-avoid-getting-blo
 
