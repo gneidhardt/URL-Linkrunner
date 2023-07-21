@@ -15,7 +15,7 @@ def main():
         for line in lines:
             split = line.split('\t')
             title = split[0]
-            link = split[1]
+            link = split[0]
 
             # Loop through links checking for 404 responses, and append to list.
             _validate_url(title, link)
