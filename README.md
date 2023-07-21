@@ -1,20 +1,26 @@
-# A-Z Linkrunner
+# URL Linkrunner
 
-A-Z Link runner is a script to take URLs from a library A-Z list (or other source) and check them for HTTP responses and generates a report.
+This is an adapted version of (https://github.com/MrJeremyHobbs/A-Z-Linkrunner) modified to test URLs of open access portfolios exported from Alma. It uses a text file of URLs and Python via Windows Command Prompt. It checks the URLs for HTTP responses and generates a report.
 
 # Getting Started
 
-Go to your A-Z list and choose the option to show ALL links. Then press CTRL+U (chrome) or right-click and choose "Show Page Source".
+Search for URLs of "free" electronic portfolios in Alma [search string: (Is Local (Electronic Portfolio) equals "Yes" AND Library (Electronic Portfolio) equals (Galter Health Sciences Library & Learning Center) AND Free (Service) equals "Free") OR (Free (Electronic Collection) equals "Free" AND Is Local (Electronic Portfolio) equals "Yes" AND Library (Electronic Portfolio) equals (Galter Health Sciences Library & Learning Center))], also saved as set name "Free (Service) and Free (Electronic Collection) items at Galter"
 
-This will display the raw HTML of your A-Z list. Select-All and copy the raw HTML to the clipboard.
+Run job in Alma - export URLs on this set. Once complete, copy URLs column to document called "urls.txt" (make sure to delete column header). (Note - need to figure out how to add a random delay, OR split file up in order not to get blocked).
 
-Load a plain-text editor (such as Notepad or Notepad++) and paste the contents to that file. Call it "a_z_urls.html" and place it in the main script folder.
+Adding random delays:
+For especially polite crawlers, you can check a site’s robots.txt (this will be located at http://example.com/robots.txt or http://www.example.com/robots.txt), often they will have a line that says crawl-delay that will tell you how many seconds you should wait in between requests you send to the site so that you don’t cause any issues with heavy server traffic.
+Internet Archive = crawl away
+HathiTrust = 10 seconds
+NIH = 2 seconds
 
-# Runing the Scripts
+Documentation on adding delays: https://stackoverflow.com/questions/4054254/how-to-add-random-delays-between-the-queries-sent-to-google-to-avoid-getting-blo
+
+# Running the Scripts
 
 ### Run 1_get_urls_a_z_list.py. 
 
-This script will search through the raw HTML and pull out the links. It will generate a file called urls.txt in the main script folder.
+This script will search through the raw HTML and pull out the links. It will generate a file called urls.txt in the main script folder. (Note - loading URLs directly into .txt file makes this step unnecessary)
 
 ### Run 2_check_urls_a_z_list.py
 
