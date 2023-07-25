@@ -4,14 +4,15 @@ import time
 
 # clean-up
 try:
-    os.remove('log.txt')
+    os.remove('log_2sec.txt')
 except FileNotFoundError:
     pass
 
 # MAIN
 # take out def in jupyter notebook and move everything over
+# make sure urls*.txt file matches
 def main():
-    with open('urls.txt', 'r', newline="", encoding="utf-8") as txtfile:
+    with open('urls_nih_2sec.txt', 'r', newline="", encoding="utf-8") as txtfile:
         lines = txtfile.read().splitlines()
         for line in lines:
             split = line.split('\t')
@@ -45,10 +46,10 @@ def _validate_url(title, url):
         note = "No status code"
     
     # write to file
-    with open('log.txt', 'a', encoding="utf-8") as writer:
+    with open('log_2sec.txt', 'a', encoding="utf-8") as writer:
         writer.write(f"{title}\t{url}\t{status_code}\t{redirect_location}\t{note}\n")
     
-    time.sleep(10)
+    time.sleep(2)
     
 # maybe take this out if providing an error    
 if __name__ == "__main__":
