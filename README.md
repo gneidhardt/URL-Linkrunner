@@ -6,9 +6,9 @@ This is an adapted version of (https://github.com/MrJeremyHobbs/A-Z-Linkrunner) 
 
 Search for URLs of "free" electronic portfolios in Alma [search string: (Is Local (Electronic Portfolio) equals "Yes" AND Library (Electronic Portfolio) equals (Galter Health Sciences Library & Learning Center) AND Free (Service) equals "Free") OR (Free (Electronic Collection) equals "Free" AND Is Local (Electronic Portfolio) equals "Yes" AND Library (Electronic Portfolio) equals (Galter Health Sciences Library & Learning Center))], also saved as set name "Free (Service) and Free (Electronic Collection) items at Galter"
 
-Run job in Alma - export URLs on this set. Once complete, copy URLs column to document called "urls.txt" (make sure to delete column header). (Note - need to figure out how to add a random delay, OR split file up in order not to get blocked).
+Run job in Alma - export URLs on this set. Once complete, copy URLs column to document called "urls.txt" (make sure to delete column header).
 
-Adding random delays:
+Adding crawling delays:
 For especially polite crawlers, you can check a site’s robots.txt (this will be located at http://example.com/robots.txt or http://www.example.com/robots.txt), often they will have a line that says crawl-delay that will tell you how many seconds you should wait in between requests you send to the site so that you don’t cause any issues with heavy server traffic.
 Internet Archive = crawl away
 HathiTrust = 10 seconds
@@ -20,7 +20,7 @@ Documentation on adding delays: https://stackoverflow.com/questions/4054254/how-
 
 # Running the Scripts
 
-### Run 1_get_urls_a_z_list.py. 
+### Run 1_get_urls_a_z_list.py. (note: not used in Galter workflow since we export URLs from Alma)
 
 This script will search through the raw HTML and pull out the links. It will generate a file called urls.txt in the main script folder. (Note - loading URLs directly into .txt file makes this step unnecessary)
 
@@ -31,6 +31,8 @@ This script makes an HTTP call to each URL in the urls.txt file. It will generat
 You can find a reference of HTTP status codes here: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 To run, open Command Prompt, navigate to Python testing folder ([cd then drag folder path], then type [python 2_check_urls_a-z_list.py]
+
+Note: Galter workflow has created three scripts with three different delays, so substitute those as needed.
 
 # Notes
 
